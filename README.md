@@ -6,7 +6,7 @@ libp2p is a p2p network SDK implemented in java language. The functional modules
 * support compressed message transmission among nodes
 
 # Note
-Starting from version 2.2.6, `libp2p` has removed the logback component and adopted the logger facade. If logging is required, you need to introduce a logging framework manually.  
+Starting from version 2.2.7, `libp2p` has removed the logback component and adopted the logger facade. If logging is required, you need to introduce a logging framework manually.  
 Here’s how to include logback in your project using Gradle:
 
 1. Add the following dependencies to your build.gradle file
@@ -69,7 +69,7 @@ repositories {
 Then add the required packages as dependencies. Please add dependencies locally.
 ```bash
 dependencies {
-    implementation group: 'io.github.tronprotocol', name: 'libp2p', version: '2.2.6'
+    implementation group: 'io.github.tronprotocol', name: 'libp2p', version: '2.2.7'
 }
 ```
 Or if you are using the jar files as your dependencies:
@@ -92,7 +92,7 @@ dependencies {
 <dependency>
     <groupId>io.github.tronprotocol</groupId>
     <artifactId>libp2p</artifactId>
-    <version>2.2.6</version>
+    <version>2.2.7</version>
 </dependency>
 ```
 
