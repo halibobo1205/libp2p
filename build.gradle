@@ -16,6 +16,7 @@ apply plugin: 'java'
 apply plugin: 'com.google.protobuf'
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'application'
+apply plugin: 'maven-publish'
 
 def protobufVersion = "3.25.8"
 def grpcVersion = "1.75.0"
@@ -176,3 +177,29 @@ artifacts {
 }
 
 processResources.dependsOn(generateProto) // explicit_dependency
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+            pom {
+                name = 'libp2p'
+                description = 'libp2p is a p2p network SDK implemented in java language.'
+                url = 'https://github.com/tronprotocol/libp2p'
+                licenses {
+                    license {
+                        name = 'The Apache Software License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                scm {
+                    url = 'https://github.com/tronprotocol/libp2p'
+                    connection = 'scm:git:git://github.com/tronprotocol/libp2p.git'
+                    developerConnection = 'scm:git:ssh://git@github.com:tronprotocol/libp2p.git'
+                }
+            }
+        }
+    }
+}
