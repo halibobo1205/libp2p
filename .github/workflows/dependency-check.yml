@@ -42,7 +42,7 @@ jobs:
         with:
           project: 'libp2p'
           path: '.'
-          format: 'CSV'
+          format: 'HTML'
           out: 'reports'
           # failOnCVSS: 8
           # suppression: '.github/dependency-check-suppressions.xml'
