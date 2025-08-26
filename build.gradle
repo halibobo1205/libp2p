@@ -20,6 +20,7 @@ apply plugin: 'maven-publish'
 
 def protobufVersion = "3.25.8"
 def grpcVersion = "1.75.0"
+def protocGenVersion = '1.60.0' // https://github.com/grpc/grpc-java/pull/11371 , 1.64.x is not supported CentOS 7.
 
 mainClassName = 'org.tron.p2p.example.StartApp'
 
@@ -104,7 +105,7 @@ protobuf {
 
     plugins {
         grpc {
-            artifact = "io.grpc:protoc-gen-grpc-java:$grpcVersion"
+            artifact = "io.grpc:protoc-gen-grpc-java:$protocGenVersion"
         }
     }
     generateProtoTasks {
